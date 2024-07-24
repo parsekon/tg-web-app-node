@@ -4,7 +4,7 @@ const express = require('express');
 const cors = require('cors');
 
 const webAppUrl = 'https://main--kaleidoscopic-rabanadas-233a86.netlify.app';
-const token = process.env.TOKEN;
+const token = '7176651787:AAFRnvpoAlW9DpgjTjoX7-dqD_QlFQ1gqCQ';
 
 const bot = new TelegramBot(token, {polling: true});
 const app = express();
