@@ -59,7 +59,7 @@ app.post('/web-data', async (req, res) => {
             id: queryId,
             title: 'Успешная покупка',
             input_message_content: {
-                message_text: ` Поздравляю с покупкой, вы приобрели товар на сумму ${totalPrice}, ${products.map(item => item.title).join(', ')}`
+                message_text: `Поздравляю с покупкой, вы приобрели товар на сумму ${totalPrice}, ${products.map(item => item.title).join(', ')}`
             }
         })
         return res.status(200).json({});
@@ -68,6 +68,6 @@ app.post('/web-data', async (req, res) => {
     }
 })
 
-const PORT = 8000;
+const PORT = 8080;
 
 app.listen(PORT, () => console.log('server started on PORT ' + PORT))
