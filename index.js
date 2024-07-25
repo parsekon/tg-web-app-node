@@ -1,13 +1,13 @@
 require('dotenv').config();
 const TelegramBot = require('node-telegram-bot-api');
-// const express = require('express');
-// const cors = require('cors');
+const express = require('express');
+const cors = require('cors');
 
 const webAppUrl = 'https://main--kaleidoscopic-rabanadas-233a86.netlify.app';
 const token = '7176651787:AAFRnvpoAlW9DpgjTjoX7-dqD_QlFQ1gqCQ';
 
 const bot = new TelegramBot(token, {polling: true});
-// const app = express();
+const app = express();
 
 app.use(express.json());
 app.use(cors());
@@ -85,6 +85,6 @@ bot.on('message', async (msg) => {
 //     }
 // })
 
-// const PORT = 8080;
+const PORT = 8080;
 
-// app.listen(PORT, () => console.log('server started on PORT ' + PORT))
+app.listen(PORT, () => console.log('server started on PORT ' + PORT))
