@@ -54,12 +54,9 @@ bot.on('message', async (msg) => {
         try {
             const data = JSON.parse(msg?.web_app_data?.data)
             const {queryId, products = [], totalPrice} = data
-            await bot.answerWebAppQuery(queryId, {
-                type: 'article',
-                id: queryId,
-                title: 'Успешная покупка',
+            await bot.sendMessage(chatId, {
                 input_message_content: {
-                    message_text: `Поздравляю с покупкой, вы приобрели товар на сумму ${totalPrice}, ${products.map(item => item.title).join(', ')}`
+                    text: `Поздравляю с покупкой, вы приобрели товар на сумму ${totalPrice}, ${products.map(item => item.title).join(', ')}`
                 }
             })
         } catch (e) {
